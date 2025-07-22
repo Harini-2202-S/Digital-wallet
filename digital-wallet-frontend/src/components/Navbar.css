@@ -1,0 +1,160 @@
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Logo */
+.nav-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+}
+
+/* Toggle Button (Two lines) */
+.menu-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 20px;
+  left: 1450px;
+}
+
+.menu-icon:focus {
+  outline: none;
+}
+
+/* Horizontal Lines */
+.line1,
+.line2 {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #5290f9;
+  left: 5px;
+  transition: transform 0.6s linear;
+}
+
+.line1 {
+  top: 10px;
+}
+
+.line2 {
+  bottom: 10px;
+}
+
+/* Rotate lines on menu active */
+.menu-icon.active .line1 {
+  transform: rotate(-765deg) translate(-5.5px);
+}
+
+.menu-icon.active .line2 {
+  transform: rotate(765deg) translate(-5.5px);
+}
+
+/* Navigation menu */
+
+.nav-links {
+  transform: translateX(100%);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  right: 60px;
+  top: -10px;
+  opacity: 0;
+  pointer-events: none;
+  padding: 10px;
+  gap: 10px;
+}
+
+/* Show menu on active */
+.nav-links.active {
+  transform: translateX(-105px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Link styles */
+.nav-links a,
+.navbar .nav-links .nav-btn {
+  all: unset;
+  text-decoration: none;
+  margin: 10px 0;
+  margin-left: 20px;
+  color: #cfd8ff;
+  font-weight: 500;
+  transition: color 0.3s ease, background 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-clip: padding-box;
+}
+
+.nav-links a:hover,
+.navbar .nav-links .nav-btn:hover {
+  background-color: lightblue;
+  color: #0f051d;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    left: auto;
+    right: 20px;
+    top: 15px;
+    position: absolute;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: auto;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    padding: 10px 20px;
+    transform: translateX(150%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 999;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
+    text-align: left;
+    width: 100%;
+  }
+
+  .nav-logo {
+    font-size: 20px;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+    margin-top: 30px;
+  }
+}

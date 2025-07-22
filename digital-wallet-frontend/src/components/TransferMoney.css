@@ -1,0 +1,280 @@
+/* Container */
+.transfer-container {
+  display: block;
+  padding: 3rem 5rem 2rem 5rem;
+  position: relative;
+  top: 50px;
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.transfer-heading {
+  top: 50px;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  color: lightblue;
+  text-align: left;
+  padding-left: 0.5rem;
+}
+
+/* Left Section */
+.transfer-form-section {
+  background: #0e1d2c;
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2rem 2rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.transfer-form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #00d2ff;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.8em;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Right Section (Favorites Column) */
+.favorites-column {
+  background: rgba(12, 30, 55, 0.5);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  height: fit-content;
+  margin-bottom: 3rem;
+}
+
+.favorites-column h3 {
+  color: lightblue;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Shared Form Elements */
+input,
+select {
+  width: 98%;
+  color: lightblue;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00d2ff;
+}
+
+.primary-btn {
+  background: #0077b6;
+  width: 25%;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-btn:hover {
+  transform: scale(1.05);
+}
+
+.error {
+  color: #ff4d4d;
+  margin-top: 10px;
+}
+
+.schedule-label {
+  display: flex;
+  align-items: center;
+  width: 15%;
+  gap: 1px;
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.search-container {
+  position: relative;
+}
+
+.suggestion-list {
+  width: 50%;
+  list-style: none;
+  padding: 0;
+  margin-left: 50px;
+  margin-top: 0px;
+  background: rgba(12, 30, 55, 0.5);
+  border-radius: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.suggestion-list:hover {
+  background-color: #02445d;
+}
+
+.suggestion-list li {
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+  color: #fff;
+  cursor: pointer;
+  background: transparent;
+  display: block;
+  border-radius: 0;
+}
+
+.suggestion-list li::before {
+  content: none;
+}
+
+/* Favorite Items */
+.favorite-item {
+  background: #26445a;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+  transition: background 0.3s ease;
+}
+
+.favorite-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.fav-buttons button {
+  background: transparent;
+  border: 1px solid #0077b6;
+  color: #0077b6;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  margin-left: 0.4rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s, color 0.3s ease;
+}
+
+.fav-buttons .remove-btn {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.fav-buttons button:hover {
+  background: #0077b6;
+  color: white;
+}
+
+.fav-buttons .remove-btn:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.fav-bubble {
+  background: #02445d;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 500;
+  color: lightblue;
+  cursor: pointer;
+  margin: 0.3rem;
+  transition: background 0.3s ease;
+}
+
+.fav-bubble:hover {
+  background: #2a4f58;
+}
+
+/* Success or status message */
+.transfer-form-section h3 {
+  color: lightblue;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* "Add to Favorites" button */
+.fav-add-button {
+  background: #001f3f;
+  color: #00d2ff;
+  border: 2px solid #00d2ff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-right: 5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fav-add-button:hover {
+  background: #00d2ff;
+  color: #001f3f;
+}
+
+.transfer-form-section {
+  background: rgba(12, 30, 55, 0.5);
+}
+
+/* Transfer button */
+.transfer-form-section button:not(.fav-add-button) {
+  background-color: #0b559e;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.transfer-form-section button:not(.fav-add-button):hover {
+  background: transparent;
+  border: 1px solid #0b559e;
+  color: white;
+}
+
+input[type="datetime-local"] {
+  width: 30%;
+  padding: 12px 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: lightblue;
+  font-size: 1rem;
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 0 5px rgba(0, 210, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+input[type="datetime-local"]::placeholder {
+  color: #b3e5fc;
+}
+
+input[type="datetime-local"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #00d2ff;
+}

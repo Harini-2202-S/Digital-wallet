@@ -1,0 +1,245 @@
+.smart-deposit-dashboard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  color: #e8ecf5;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.smart-deposit-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: lightblue;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+}
+
+.dashboard-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-right: 10px;
+}
+
+.left-panel {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tip-section,
+.goals-section,
+.chart-section,
+.recent-deposits,
+.deposit-form,
+.deposit-box {
+  background: rgba(14, 28, 45, 0.5);
+  margin-top: 10px;
+  padding: 1rem;
+  border-radius: 20px;
+  color: #f0f6ff;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.tip-section p {
+  font-style: italic;
+  color: #ffdb70;
+}
+
+.goal-bar {
+  margin-bottom: 1.8rem;
+}
+
+.goal-bar p {
+  margin: 0.2rem 0;
+}
+
+.progress-bar {
+  width: 100%;
+  margin-top: 10px;
+  height: 15px;
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #17aef9 0%,
+    #096ddf 15%,
+    #065bb6 35%,
+    #0347a6 60%,
+    #0729e9 85%,
+    #0910d2 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: calc(100% - var(--progress, 0%));
+  background: rgba(14, 28, 45, 0.8);
+  transition: width 0.5s ease-in-out;
+}
+
+.delete-goal-btn {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  color: #ff5c5c;
+  background-color: transparent;
+  border: 1px solid #ff5c5c;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  float: right;
+}
+
+.delete-goal-btn:hover {
+  background-color: #ff5c5c;
+  color: white;
+}
+
+.delete-goal-btn:active {
+  transform: scale(0.97);
+}
+
+.center-panel {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  gap: 20px;
+}
+
+.center-panel p {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.deposit-form input[type="text"] {
+  margin-right: 10px;
+  width: 95%;
+}
+
+.deposit-form button,
+.setup-goal-btn,
+.right-panel .goals-section .no-goals-placeholder button {
+  margin-top: 10px;
+  width: 100%;
+  background-color: #0b559e;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.deposit-form button:hover,
+.setup-goal-btn:hover,
+.right-panel .goals-section .no-goals-placeholder button:hover {
+  background: transparent;
+  border: 1px solid #0b559e;
+  color: #0b559e;
+}
+
+.right-panel {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.recent-deposits ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recent-deposits li {
+  background: rgba(14, 28, 45, 0.5);
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-left: 4px solid #6bdcff;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  white-space: nowrap;
+}
+
+.checkbox-label input[type="checkbox"] {
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+  .left-panel,
+  .center-panel,
+  .right-panel {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+  .smart-deposit-title {
+    text-align: center;
+  }
+  .center-panel {
+    align-items: stretch;
+  }
+}
+
+.deposit-success-message {
+  background: rgba(0, 255, 200, 0.05);
+  border: 2px solid rgba(0, 255, 200, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: center;
+  color: #7fffd4;
+  box-shadow: 0 0 20px rgba(0, 255, 200, 0.1);
+  font-family: "Segoe UI", sans-serif;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.deposit-success-message h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #9effe5;
+}
+
+.deposit-success-message .fade-subtext {
+  color: #a7f5dc;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

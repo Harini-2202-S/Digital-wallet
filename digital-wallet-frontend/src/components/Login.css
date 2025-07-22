@@ -1,0 +1,197 @@
+.login-container {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  display: block;
+  color: #fff;
+  margin-top: 300px;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+.btn label {
+  background-color: lightblue;
+  display: inline-block;
+  margin: 0 20px;
+  padding: 20px;
+}
+
+.modal {
+  width: 400px;
+  margin: auto;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 2s;
+}
+
+.modal .header {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  min-height: 300px;
+  border-radius: 30px;
+  position: relative;
+  padding: 20px 10px 100px 10px;
+  transition: 0.5s;
+  transform: translate(0, 150px);
+  top: -70px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.5);
+}
+
+.modal img {
+  position: absolute;
+  visibility: visible;
+}
+
+/* center image */
+.modal img:nth-child(1) {
+  width: 100%;
+  left: 1%;
+  top: 1%;
+}
+
+/* currency note image */
+.modal img:nth-child(2) {
+  top: -30px;
+  width: 150px;
+  left: -70px;
+  transform: rotate(-20deg);
+}
+
+/* phone card image */
+.modal img:nth-child(3) {
+  bottom: 40px;
+  width: 130px;
+  left: 360px;
+  transform: rotate(35deg);
+}
+
+.modal .content {
+  background-color: #e2f0eb4d;
+  padding: 15px;
+  min-height: 100px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  color: #eee;
+  transform: translate(0, 20px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3),
+    0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+.modal .content input {
+  position: relative;
+  width: 20rem;
+  left: 20px;
+  padding: 10px 1px;
+  margin: 1px 0;
+  border-radius: 12px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+}
+
+.modal .confirm {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.modal .content label,
+.modal .content button {
+  display: inline-block;
+  border: none;
+  padding: 10px;
+  color: #fff;
+  margin: 0 10px;
+}
+
+.modal .contentlabel {
+  background-color: #ffffff4d;
+}
+
+.modal .content button {
+  background-color: transparent;
+  margin-top: 20px;
+  width: 100px;
+  align-self: center;
+}
+
+.modal .content button[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.modal input[name="setttingModal"] {
+  display: none;
+}
+
+.modal:has(input[name="settingModal"]:checked) {
+  transition: 0s;
+  transform: translate((-50%, -50%));
+}
+
+.modal:has(input[name="settingModal"]:checked) .header {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* ✅ Responsive Fixes for Login Page */
+@media screen and (max-width: 768px) {
+  .modal {
+    width: 90%;
+    max-width: 350px;
+    padding: 0 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal .header {
+    padding: 10px;
+    min-height: 200px;
+    top: -50px;
+  }
+
+  .modal img:nth-child(1) {
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+
+  .modal img:nth-child(2) {
+    width: 100px;
+    top: -20px;
+    left: -30px;
+    transform: rotate(-15deg);
+  }
+
+  .modal img:nth-child(3) {
+    width: 90px;
+    bottom: 10px;
+    left: auto;
+    right: -20px;
+    transform: rotate(20deg);
+  }
+
+  .modal .content {
+    padding: 15px 10px;
+    font-size: 0.9rem;
+  }
+
+  .modal .content input {
+    width: 100%;
+    left: 0;
+    font-size: 1rem;
+  }
+
+  .modal .content button {
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+
+  .btn {
+    margin-top: 150px;
+    font-size: 1rem;
+  }
+}

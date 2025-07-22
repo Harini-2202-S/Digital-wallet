@@ -1,0 +1,400 @@
+.wallet-page {
+  top: 25px;
+  position: relative;
+  font-family: "Segoe UI", sans-serif;
+  padding: 20px;
+  color: #e8ecf5;
+  min-height: 100vh;
+  margin-bottom: 50px;
+}
+
+.wallet-page .wallet-content {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.wallet-page .left-column,
+.wallet-page .right-column {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wallet-page .right-column .view-more-button {
+  border-radius: 10px;
+}
+
+.wallet-page .center-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wallet-page .card {
+  background: rgba(12, 30, 55, 0.5);
+  backdrop-filter: blur(14px);
+  color: #f0f6ff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 190, 255, 0.1);
+  transition: transform 0.3s ease;
+  height: 150px;
+  width: 260px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wallet-page .card-name {
+  position: relative;
+  left: 10px;
+}
+
+.wallet-page .card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0, 200, 255, 0.3);
+}
+
+.wallet-page .card-number,
+.wallet-page .card-type {
+  font-size: 1.1em;
+  letter-spacing: 2px;
+}
+
+.wallet-page .balance-info {
+  margin-top: 0;
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+  color: #def1ff;
+  backdrop-filter: blur(10px);
+}
+
+.balance-info p {
+  align-items: left;
+}
+
+.wallet-page .balance-info h3 {
+  font-size: 1.3em;
+  color: #99dfff;
+}
+
+.wallet-page .balance-info .amount {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.wallet-page .balance-info .amount::before {
+  content: "₹";
+  margin-right: 3px;
+  color: #00d6ff;
+}
+
+.wallet-page .balance-info .growth {
+  color: #72ffca;
+  font-size: 1.1em;
+}
+
+.wallet-page .add-card {
+  margin-top: 10px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #0e3a57, #185b87);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 190, 255, 0.2);
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.wallet-page .add-card:hover {
+  background: linear-gradient(135deg, #0d496e, #1c6aa0);
+  transform: scale(1.05);
+}
+
+.wallet-page .quick-transfer {
+  background-color: rgba(255, 255, 255, 0.04);
+  padding-top: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+}
+
+.wallet-page .quick-transfer h3 {
+  font-size: 1.1em;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.wallet-page .quick-transfer button,
+.wallet-page .right-column .view-more-button {
+  margin-top: 10px;
+  width: 100%;
+  color: white;
+  background: linear-gradient(135deg, #123144, #4694c9);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.wallet-page .quick-transfer button:hover,
+.wallet-page .right-column .view-more-button:hover {
+  background: linear-gradient(135deg, #2e3b43, #d2e3ef);
+  color: white;
+}
+
+.wallet-page .overview {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wallet-page .overview .box {
+  background: rgba(14, 28, 45, 0.5);
+  padding-top: 0;
+  padding-bottom: 10px;
+  border-radius: 12px;
+  flex: 1;
+  text-align: center;
+  margin-right: 10px;
+  box-shadow: 0 2px 12px rgba(0, 200, 255, 0.1);
+  color: #e8f1ff;
+  backdrop-filter: blur(8px);
+}
+
+.wallet-page .overview .box strong {
+  flex: 1;
+  text-align: center;
+  margin-right: 10px;
+  color: #e8f1ff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.wallet-page .overview .box h5 {
+  padding-top: 10px;
+  margin-top: 0;
+  color: #8fdaff;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.wallet-page .money-flow h3 {
+  font-size: 1.5rem;
+}
+
+.wallet-page .money-flow .chart-placeholder {
+  background: rgba(14, 28, 45, 0.5);
+  height: 300px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 150px;
+  color: #a5c4df;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.wallet-page .bottom-section {
+  display: flex;
+  gap: 20px;
+}
+
+.wallet-page .savings,
+.wallet-page .expenses {
+  background: rgba(10, 30, 50, 0.4);
+  flex: 1;
+  padding: 20px 24px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 170, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  color: #e4eaf1;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 5px solid #00cfff;
+}
+
+.wallet-page .savings:hover,
+.wallet-page .expenses:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 200, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.wallet-page .savings::before,
+.wallet-page .expenses::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 6px;
+  background: linear-gradient(to bottom, #00d2ff, #0066cc);
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
+  opacity: 0.95;
+}
+
+.wallet-page .savings h3,
+.wallet-page .expenses h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wallet-page .savings ul,
+.wallet-page .expenses ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wallet-page .savings li,
+.wallet-page .expenses li {
+  padding: 8px 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #d7e7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wallet-page .savings li span,
+.wallet-page .expenses li span {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.wallet-page .expense-pie {
+  margin: 10px 0;
+  font-size: 0.95em;
+  color: #9eb6cc;
+}
+
+.wallet-page .right-column ul {
+  background-color: rgba(255, 255, 255, 0.04);
+  margin-bottom: 0;
+  margin-top: 0;
+  border-radius: 20px;
+  list-style: none;
+  padding: 0;
+  backdrop-filter: blur(10px);
+}
+
+.wallet-page .right-column h3 {
+  color: #a3dfff;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.04);
+  margin-bottom: 0;
+  margin-top: 0;
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+.wallet-page .right-column ul li {
+  padding: 8.5px 20px;
+  border-bottom: 1px solid #2f445a;
+  color: #d8e9f7;
+}
+
+.chart-placeholder {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 200, 255, 0.08);
+  padding: 20px;
+  box-sizing: border-box;
+  backdrop-filter: blur(6px);
+}
+
+.chartjs-render-monitor {
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+@media (max-width: 768px) {
+  .chart-placeholder {
+    height: 250px;
+  }
+}
+
+.balance-card {
+  background: rgba(10, 30, 50, 0.5);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  color: #f1f3f9;
+  text-align: center;
+  width: 250px;
+  margin: auto;
+  backdrop-filter: blur(8px);
+}
+
+.balance-card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #d0eaff;
+}
+
+.balance-card strong {
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.balance-card .growth {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.balance-card .description {
+  font-size: 0.9rem;
+  color: #b0c4d9;
+}
+
+@media (max-width: 1200px) {
+  .wallet-page .wallet-content {
+    flex-wrap: wrap;
+  }
+
+  .wallet-page .left-column,
+  .wallet-page .right-column {
+    width: 100%;
+  }
+
+  .wallet-page .center-column {
+    width: 100%;
+  }
+
+  .wallet-page .right-column ul {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+}

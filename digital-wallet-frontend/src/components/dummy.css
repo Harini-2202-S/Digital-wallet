@@ -1,0 +1,95 @@
+/* Navbar Container */
+.navbar {
+  position: relative;
+  width: 80px;
+  padding: 20px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); */
+  /* border-radius: 3px; */
+  transition: width 0.6s linear;
+  z-index: 1000;
+}
+
+/* Toggle Button (Two lines) */
+.menu-icon {
+  position: relative;
+  left: 1400px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-icon:focus {
+  outline: none;
+}
+
+/* Horizontal Lines */
+.line1,
+.line2 {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #5290f9;
+  left: 5px;
+  transition: transform 0.6s linear;
+}
+
+/* Position lines */
+.line1 {
+  top: 10px;
+}
+
+.line2 {
+  bottom: 10px;
+}
+
+/* Rotate lines on menu active */
+.menu-icon.active .line1 {
+  transform: rotate(-765deg) translate(5.5px);
+}
+
+.menu-icon.active .line2 {
+  transform: rotate(765deg) translate(-5.5px);
+}
+
+/* Menu Items */
+.nav-links {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  pointer-events: none;
+  left: 1380px;
+  width: 100px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+}
+
+/* Show menu on active */
+.nav-links.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Link styles */
+.nav-links a {
+  color: wheat;
+  text-decoration: none;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffd5;
+}

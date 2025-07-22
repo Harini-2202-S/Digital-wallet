@@ -1,0 +1,99 @@
+.smart-deposit-container {
+  position: relative;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2.5rem 3rem;
+  color: #e2e8f0;
+  font-family: "Poppins", sans-serif;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.smart-deposit-container h2 {
+  font-size: 2rem;
+  color: #38bdf8;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.smart-deposit-container input,
+.smart-deposit-container select {
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  background: rgba(30, 41, 59, 0.85);
+  color: #f1f5f9;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.smart-deposit-container input:focus,
+.smart-deposit-container select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background-color: rgba(30, 41, 59, 1);
+}
+
+.smart-deposit-container label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.smart-deposit-container button {
+  padding: 0.9rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+  margin-top: 1rem;
+}
+
+.smart-deposit-container .continue-btn {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.smart-deposit-container .continue-btn:hover {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  transform: scale(1.03);
+}
+
+.smart-deposit-container .confirm-btn {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+  color: white;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+}
+
+.smart-deposit-container .confirm-btn:hover {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  transform: scale(1.03);
+}
+
+.smart-deposit-container .success {
+  color: #4ade80;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.smart-deposit-container .error {
+  color: #f87171;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .smart-deposit-container {
+    padding: 2rem;
+  }
+}

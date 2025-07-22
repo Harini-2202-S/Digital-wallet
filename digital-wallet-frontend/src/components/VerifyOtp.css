@@ -1,0 +1,65 @@
+.verify-otp-container {
+  max-width: 400px;
+  margin-top: 50px;
+  margin-left: 500px;
+  margin-bottom: 60px;
+  padding: 40px;
+  background: transparent;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+  transition: 0.3s ease-in-out;
+  position: relative;
+  z-index: 10;
+}
+
+.verify-otp-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: lightblue;
+}
+
+.verify-otp-container p {
+  text-align: center;
+  margin-bottom: 14px;
+  color: lightblue;
+}
+
+.verify-otp-container input {
+  width: 20rem;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid lightblue;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.verify-otp-container input:focus {
+  border-color: #4a90e2;
+}
+
+.verify-otp-container button {
+  margin-left: 20px;
+  padding: 15px 20px;
+  width: 22rem;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.verify-otp-container button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.verify-otp-container p.message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

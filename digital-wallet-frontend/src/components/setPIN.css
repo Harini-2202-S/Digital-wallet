@@ -1,0 +1,73 @@
+.setpin-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+  padding: 40px 20px;
+}
+
+.setpin-form {
+  background: transparent;
+  padding: 2.5rem;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  transition: 0.3s ease-in-out;
+}
+
+.setpin-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: lightblue;
+}
+
+.setpin-form input[type="tel"] {
+  width: 20rem;
+  padding: 1rem;
+  align-self: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  background-color: #ccc;
+  color: black;
+  transition: 0.2s ease-in-out;
+}
+
+.setpin-form input[type="tel"]:focus {
+  border-color: lightblue;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(173, 216, 230, 0.3);
+}
+
+.setpin-form button[type="submit"] {
+  align-self: center;
+  width: 10rem;
+  padding: 0.75rem;
+  background-color: transparent;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.setpin-form button[type="submit"]:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.setpin-form p {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.setpin-form .text-red-600 {
+  color: #ff6b6b;
+}
+
+.setpin-form .text-green-600 {
+  color: #8ef5c4;
+}

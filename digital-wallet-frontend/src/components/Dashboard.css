@@ -1,0 +1,539 @@
+/* Base container  */
+.dashboard-container {
+  font-family: "Segoe UI", sans-serif;
+  color: #fff;
+  position: relative;
+  width: 100%;
+}
+
+.dashboard-container .hero-text p {
+  position: relative;
+  top: 55px;
+  font-size: 18px;
+  color: #ccccff;
+  max-width: 700px;
+  text-align: left;
+}
+
+/* ------------------------------ Glowing Light Cursor Line Effect ----------------------------------- */
+.dashboard-container .hero-section {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 50px 100px;
+}
+
+/* Text in front of the glow */
+.dashboard-container .hero-text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+/* Fancy text styling for glowing effect */
+.dashboard-container .hero-text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #fff, #00cfff, #fff);
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.3s ease;
+  text-align: left;
+}
+
+.dashboard-container .hidden-word {
+  background-color: white;
+}
+
+.dashboard-container .glow-line {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 20px;
+  height: 25%;
+  background: white;
+  transform: translate(0, -50%);
+  transition: transform 0.1s ease-out;
+  pointer-events: none;
+  border-radius: 30px;
+  z-index: 2;
+  filter: blur(1px);
+  box-shadow: 0 0 30px rgba(0, 153, 255, 1), 0 0 80px rgba(0, 153, 255, 0.95),
+    0 0 150px rgba(0, 153, 255, 0.6), 0 0 200px rgba(0, 153, 255, 0.3);
+}
+
+.dashboard-container .glow-line::before {
+  content: "";
+  position: absolute;
+  width: 2000px;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle,
+    rgba(0, 153, 255, 0.4) 0%,
+    transparent 70%
+  );
+  z-index: 2;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.dashboard-container .hidden-word {
+  position: relative;
+  top: 50px;
+  color: transparent;
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.dashboard-container .glow-letter {
+  transition: color 0.1s ease, text-shadow 0.1s ease;
+  display: inline-block;
+  color: #fff;
+}
+
+.dashboard-container .active-glow {
+  color: white;
+  text-shadow: 0 0 8px white, 0 0 20px white;
+}
+
+.dashboard-container .handle-text {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* ------------------------------------------------------  BUTTONS  ----------------------------------------------------------*/
+
+/* CTA Buttons */
+.dashboard-container .cta-buttons {
+  margin-top: 200px;
+}
+
+.dashboard-container .cta-buttons button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dashboard-container .cta-buttons .get-now {
+  background: #00ffd5;
+  color: #0f051d;
+  font-weight: 600;
+  box-shadow: 0 0 15px #00ffd5;
+}
+
+.dashboard-container .cta-buttons .get-now:hover {
+  background: #00ccaa;
+  box-shadow: 0 0 20px #00ffd5;
+}
+
+.dashboard-container .cta-buttons .download {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #00ffd5;
+}
+
+.dashboard-container .cta-buttons .download:hover {
+  background: #00ffd5;
+  color: #0f051d;
+}
+
+/* ------------------------------------------------  PARA  --------------------------------------------------- */
+
+.dashboard-container .para-content {
+  margin-top: 10px;
+  padding: 40px;
+  background: rgba(0, 255, 213, 0.04);
+  border: 1px solid rgba(0, 255, 213, 0.1);
+  border-radius: 16px;
+  color: #d0e7ff;
+  box-shadow: 0 0 25px rgba(0, 255, 213, 0.05);
+  max-width: 800px;
+}
+
+.dashboard-container .para-content h1 {
+  color: lightblue;
+  font-size: 32px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgba(0, 255, 213, 0.3);
+}
+
+.dashboard-container .para-content p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ------------------------------------------------  CARD  --------------------------------------------------- */
+
+.dashboard-container .custom-cards {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.dashboard-container .credit-card {
+  left: 950px;
+  top: -315px;
+  width: 320px;
+  height: 200px;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 255, 213, 0.1),
+    0 0 15px rgba(0, 255, 213, 0.15);
+  color: #ffffff;
+  padding: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.dashboard-container .credit-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  transform: rotate(25deg);
+  animation: shine 4s infinite linear;
+}
+
+.dashboard-container .credit-card:hover {
+  transform: rotateY(6deg) rotateX(3deg) scale(1.04);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(117, 204, 255, 0.382);
+}
+
+.dashboard-container .credit-card .chip {
+  width: 45px;
+  height: 35px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #ccc, #999);
+  box-shadow: inset 0 1px 2px #00000055;
+}
+
+.dashboard-container .credit-card .card-number {
+  font-size: 20px;
+  letter-spacing: 2px;
+  font-family: "Courier New", monospace;
+  margin-top: 20px;
+}
+
+.dashboard-container .credit-card .card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.85;
+}
+
+.dashboard-container .card-holder {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dashboard-container .expiry {
+  font-size: 13px;
+}
+
+/* ------------------------------------------------  WALLET STATS  --------------------------------------------------- */
+
+.dashboard-container .wallet-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  margin: 0 auto;
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-container .balance-box {
+  background: rgba(0, 255, 213, 0.04);
+  border-radius: 12px;
+  padding-top: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  max-height: 100px;
+  border: 1px solid rgba(0, 255, 213, 0.1);
+}
+
+.dashboard-container .transactions-box {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0, 255, 213, 0.04);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 255, 213, 0.1);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dashboard-container .balance-box h2,
+.dashboard-container .transactions-box h3 {
+  color: lightblue;
+
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+.dashboard-container .balance-box p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* ------------------------------------------------  TRANSACTION HISTORY  --------------------------------------------------- */
+
+.dashboard-container .transactions-box ul {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #cceeff;
+  margin-top: 15px;
+}
+
+.dashboard-container .txn-item {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 12px 18px;
+  margin-bottom: 14px;
+  transition: background 0.3s ease;
+}
+
+.dashboard-container .txn-item:hover {
+  background: rgba(0, 255, 213, 0.08);
+}
+
+.dashboard-container .txn-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+}
+
+.dashboard-container .txn-type.deposit {
+  color: #00ffaa;
+}
+
+.dashboard-container .txn-type.transfer {
+  color: #ffcc66;
+}
+
+.dashboard-container .txn-amount {
+  font-weight: bold;
+}
+
+.dashboard-container .txn-meta {
+  font-size: 13px;
+  color: #99ccff;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.dashboard-container .txn-summary {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #00eaff;
+  font-style: italic;
+  text-align: right;
+}
+
+/* ------------------------------------------------  SMART TIPS CONTAINER  --------------------------------------------------- */
+
+.smart-tips-container {
+  background: rgba(0, 255, 213, 0.04);
+  border: 1px solid rgba(0, 255, 213, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  margin-top: 0px;
+  color: #e0f7ff;
+  font-family: "Segoe UI", "Roboto", sans-serif;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.smart-tips-container h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: lightblue;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.tip-card {
+  background: rgba(0, 255, 204, 0.05);
+  padding: 16px 24px;
+  border-left: 5px solid #00ffc8;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.tip-card:hover {
+  background: rgba(0, 255, 213, 0.08);
+  border-left: 5px solid #00ffd5;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-container .hero-section {
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .dashboard-container .hero-text h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .dashboard-container .hero-text p {
+    top: 20px;
+    font-size: 16px;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  /* CTA buttons stack */
+  .dashboard-container .cta-buttons {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .dashboard-container .cta-buttons button {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  /* Credit card position fix */
+  .dashboard-container .custom-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .dashboard-container .credit-card {
+    position: static;
+    width: 90%;
+    max-width: 320px;
+    height: 200px;
+  }
+
+  /* Wallet Stats Section */
+  .dashboard-container .wallet-stats {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .dashboard-container .balance-box,
+  .dashboard-container .transactions-box,
+  .dashboard-container .smart-tips-container {
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+  }
+
+  .dashboard-container .transactions-box ul {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-container .txn-row,
+  .dashboard-container .txn-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .dashboard-container .txn-summary {
+    text-align: center;
+    font-size: 13px;
+  }
+
+  /* Smart Tips */
+  .smart-tips-container {
+    padding: 20px;
+    margin-top: 60px;
+    max-width: 95%;
+  }
+
+  .smart-tips-container h2 {
+    font-size: 22px;
+  }
+
+  .tip-card {
+    font-size: 15px;
+  }
+
+  /* Glow line disable on small screens */
+  .dashboard-container .glow-line {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .dashboard-container .wallet-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .dashboard-container .balance-box,
+  .dashboard-container .transactions-box {
+    flex: 1 1 45%;
+    margin: 10px;
+  }
+
+  .dashboard-container .smart-tips-container {
+    flex: 1 1 90%;
+    margin-top: 20px;
+  }
+}
