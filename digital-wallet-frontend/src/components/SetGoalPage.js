@@ -21,7 +21,7 @@ const SetGoalPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/savings", {
+      const res = await fetch("https://digital-wallet-u6ag.onrender.com/api/savings", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

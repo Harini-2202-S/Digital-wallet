@@ -35,7 +35,7 @@ const VerifyOtp = () => {
 
       // Send data to the backend via POST request
       const res = await axios.post(
-        "http://localhost:5000/api/auth/verify-otp",
+        "https://digital-wallet-u6ag.onrender.com/api/auth/verify-otp",
         {
           name,
           email,

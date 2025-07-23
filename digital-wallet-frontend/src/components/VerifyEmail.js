@@ -10,7 +10,7 @@ const VerifyEmail = () => {
     const verifyEmail = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/auth/token/verify/${token}`
+          `https://digital-wallet-u6ag.onrender.com/api/auth/token/verify/${token}`
         );
 
         if (res.data.success) {

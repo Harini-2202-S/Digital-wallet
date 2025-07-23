@@ -14,7 +14,7 @@ const UserProfile = () => {
 
         // Fetch user profile from backend
         const userRes = await axios.get(
-          "http://localhost:5000/api/user/profile",
+          "https://digital-wallet-u6ag.onrender.com/api/user/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -27,7 +27,7 @@ const UserProfile = () => {
 
         // Fetch wallet data
         const walletRes = await axios.get(
-          `http://localhost:5000/api/wallet/${userData._id}`,
+          `https://digital-wallet-u6ag.onrender.com/api/wallet/${userData._id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

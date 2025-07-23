@@ -33,7 +33,7 @@ const WalletPage = () => {
   const [growthPercentage, setGrowthPercentage] = useState("0.00");
   const navigate = useNavigate();
 
-  const API_URL = "http://localhost:5000/api/wallet";
+  const API_URL = "https://digital-wallet-u6ag.onrender.com/api/wallet";
   const token = localStorage.getItem("token");
 
   useEffect(() => {

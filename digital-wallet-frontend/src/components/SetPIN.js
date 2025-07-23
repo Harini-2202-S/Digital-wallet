@@ -29,7 +29,7 @@ const SetPIN = () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/user/set-pin",
+        "https://digital-wallet-u6ag.onrender.com/api/user/set-pin",
         { pin },
         {
           headers: {

@@ -33,7 +33,7 @@ const DashboardPage = () => {
       try {
         const response = await axios.get(
           // "http://192.168.68.102:5000/api/wallet",
-          "http://localhost:5000/api/wallet",
+          "https://digital-wallet-u6ag.onrender.com/api/wallet",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -70,7 +70,7 @@ const DashboardPage = () => {
     try {
       const response = await axios.get(
         // `http://192.168.68.102:5000/api/wallet/userdata/${userEmail}`,
-        `http://localhost:5000/api/wallet/userdata/${userEmail}`,
+        `https://digital-wallet-u6ag.onrender.com/api/wallet/userdata/${userEmail}`,
 
         {
           headers: {
@@ -88,7 +88,7 @@ const DashboardPage = () => {
     try {
       const response = await axios.get(
         // `http://192.168.68.102:5000/api/user/${userId}`,.
-        `http://localhost:5000/api/user/${userId}`,
+        `https://digital-wallet-u6ag.onrender.com/api/user/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -118,7 +118,7 @@ const DashboardPage = () => {
 
     if (token && userId) {
       axios
-        .get(`http://localhost:5000/api/user/${userId}`, {
+        .get(`https://digital-wallet-u6ag.onrender.com/api/user/${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {

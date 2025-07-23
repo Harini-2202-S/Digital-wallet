@@ -37,10 +37,10 @@ const SmartDeposit = () => {
 
   const fetchData = async () => {
     try {
-      const res1 = await fetch("http://localhost:5000/api/savings", {
+      const res1 = await fetch("https://digital-wallet-u6ag.onrender.com/api/savings", {
         headers: { Authorization: `Bearer ${token}` },
       });
-      const res2 = await fetch("http://localhost:5000/api/deposits", {
+      const res2 = await fetch("https://digital-wallet-u6ag.onrender.com/api/deposits", {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -107,7 +107,7 @@ const SmartDeposit = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/goal/delete/${id}`,
+        `https://digital-wallet-u6ag.onrender.com/api/goal/delete/${id}`,
         {
           method: "DELETE",
           headers: {

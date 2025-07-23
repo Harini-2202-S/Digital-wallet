@@ -18,7 +18,7 @@ const Login = () => {
     try {
       const response = await axios.post(
         // "http://192.168.68.100:5000/api/auth/login",
-        "http://localhost:5000/api/auth/login",
+        "https://digital-wallet-u6ag.onrender.com/api/auth/login",
         { email, password }
       );
 
