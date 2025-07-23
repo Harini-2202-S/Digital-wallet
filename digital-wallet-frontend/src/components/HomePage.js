@@ -35,7 +35,7 @@ const HomePage = () => {
       <div className="welcome-image">
         <img src={welcomeImage} alt="Welcome" />
       </div>
-      <div class="typeWriter">
+      <div className="typeWriter">
         <p className="simple">Simple.</p>
         <br></br>
         <p className="secure">Secure.</p>
@@ -51,11 +51,11 @@ const HomePage = () => {
 
       <section className="hero">
         <div className="setting-icon">
-          <img src={settingIcon} alt="setting-icon" class="autoRotate" />
+          <img src={settingIcon} alt="setting-icon" className="autoRotate" />
         </div>
         <h1 className="autoShow">Welcome to Your Digital Wallet</h1>
         <div className="pic4">
-          <img src={pic4} alt="pic" class="autoShow" />
+          <img src={pic4} alt="pic" className="autoShow" />
         </div>
         <p className="para1">
           A Safe and Easy Way to Manage Your Virtual Finances Welcome to the
@@ -73,7 +73,7 @@ const HomePage = () => {
         </p>
         <h2 className="autoShow">Why Choose Our Digital Wallet? </h2>.
         <div className="pic2">
-          <img src={pic2} alt="pic" class="autoShow" />
+          <img src={pic2} alt="pic" className="autoShow" />
         </div>
         <p className="para2">
           Our platform is designed for simplicity and security. Whether you're a
@@ -83,7 +83,7 @@ const HomePage = () => {
         </p>
         <h3 className="autoShow">What’s Inside Your Digital Wallet?</h3>
         <div className="pic1">
-          <img src={pic1} alt="pic" class="autoShow" />
+          <img src={pic1} alt="pic" className="autoShow" />
         </div>
         <p className="para3">
           User-Friendly Dashboard: A clear and organized space to manage your

@@ -7,6 +7,9 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 
+const connectDB = require("./config/db");
+connectDB();
+
 const authRoutes = require("./routes/auth");
 const walletRoutes = require("./routes/wallet");
 const userRoutes = require("./routes/user");
@@ -36,15 +39,6 @@ app.use("/api/limit", spendingLimitRoutes);
 app.use("/api/Otp", otpRoutes);
 app.use("/api/deposits", require("./routes/deposit"));
 app.use("/api/goal", require("./routes/goal"));
-
-const dbUri =
-  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/digital_wallet";
-console.log("📦 Connecting to MongoDB at:", dbUri);
-
-mongoose
-  .connect(dbUri)
-  .then(() => console.log("MongoDB connected successfully!"))
-  .catch((err) => console.error("MongoDB connection error:", err));
 
 app.get("/api/transactions", async (req, res) => {
   try {

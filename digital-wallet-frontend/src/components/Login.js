@@ -66,7 +66,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="btn">
-        <label for="modal_confirm1">Login</label>
+        <label htmlFor="modal_confirm1">Login</label>
       </div>
 
       <div className="modal">
