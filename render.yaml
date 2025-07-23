@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: digital-wallet-backend
+    env: node
+    plan: free
+    rootDir: digital-wallet-backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: MONGO_URI
+        value: your_mongodb_atlas_uri
+      - key: JWT_SECRET
+        value: your_jwt_secret
+
+  - type: web
+    name: digital-wallet-frontend
+    env: node
+    plan: free
+    rootDir: digital-wallet-frontend
+    buildCommand: npm install && npm run build
+    startCommand: serve -s build
