@@ -7,6 +7,21 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 
+const allowedOrigins = ["https://digital-wallet-1-qqre.onrender.com"];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
+
 const connectDB = require("./config/db");
 connectDB();
 
@@ -26,7 +41,6 @@ require("./Scheduler/scheduler");
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/wallet", walletRoutes);
