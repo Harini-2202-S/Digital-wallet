@@ -3,7 +3,7 @@ const User = require("../models/User");
 const Transaction = require("../models/Transaction");
 const SpendingLimit = require("../models/SpendingLimit");
 const Favorite = require("../models/Favorite");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Generate transaction ID
 const generateTransactionId = () => {
