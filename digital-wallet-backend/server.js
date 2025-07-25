@@ -7,7 +7,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 const app = express();
 
-const allowedOrigins = ["https://digital-wallet-1-qqre.onrender.com"];
+const allowedOrigins = [
+  "https://digital-wallet-1-qqre.onrender.com",
+  "http://localhost:3000",
+];
 
 app.use(
   cors({
