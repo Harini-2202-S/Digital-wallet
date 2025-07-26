@@ -19,7 +19,7 @@ const DepositPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "/api/deposit/initiate",
+        "https://digital-wallet-u6ag.onrender.com/api/deposit/initiate",
         { amount, method, source },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -39,7 +39,7 @@ const DepositPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "/api/deposit/verify",
+        "https://digital-wallet-u6ag.onrender.com/api/deposit/verify",
         { depositId, otp, pin },
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },

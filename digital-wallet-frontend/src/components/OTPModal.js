@@ -10,7 +10,7 @@ const OTPModal = ({ otpToken, setOtp, setOtpModalOpen }) => {
 
   const handleVerifyOtp = async () => {
     try {
-      const response = await axios.post("/api/deposit/verify-otp", {
+      const response = await axios.post("https://digital-wallet-u6ag.onrender.com/api/deposit/verify-otp", {
         otp: otpInput,
         token: otpToken,
       });

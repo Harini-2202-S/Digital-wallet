@@ -20,7 +20,7 @@ const DepositForm = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("/api/deposit/generate-otp", {
+      const response = await axios.post("https://digital-wallet-u6ag.onrender.com/api/deposit/generate-otp", {
         email: "user@example.com",
       });
       setOtpToken(response.data.token);

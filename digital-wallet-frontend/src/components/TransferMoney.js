@@ -29,7 +29,7 @@ const TransferMoney = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const res = await axios.get("/api/user/favorites", config);
+        const res = await axios.get("https://digital-wallet-u6ag.onrender.com/api/user/favorites", config);
         setFavorites(res.data.favorites);
       } catch (err) {
         console.error("Failed to fetch favorites");
@@ -42,7 +42,7 @@ const TransferMoney = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "/api/transfer/verify-recipient",
+        "https://digital-wallet-u6ag.onrender.com/api/transfer/verify-recipient",
         { recipientHandle: to },
         config
       );
@@ -81,7 +81,7 @@ const TransferMoney = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "/api/transfer/initiate",
+        "https://digital-wallet-u6ag.onrender.com/api/transfer/initiate",
         {
           recipientHandle: to,
           amount: numericAmount,
@@ -114,7 +114,7 @@ const TransferMoney = () => {
   const handleAddToFavorites = async () => {
     try {
       const res = await axios.post(
-        "/api/transfer/favorites/add",
+        "https://digital-wallet-u6ag.onrender.com/api/transfer/favorites/add",
         { handle: to },
         config
       );
@@ -129,7 +129,7 @@ const TransferMoney = () => {
   const handleRemoveFavorite = async (fav) => {
     try {
       const res = await axios.post(
-        "/api/transfer/favorites/remove",
+        "https://digital-wallet-u6ag.onrender.com/api/transfer/favorites/remove",
         { handle: fav },
         config
       );
@@ -177,7 +177,7 @@ const TransferMoney = () => {
                   }
                   try {
                     const res = await axios.get(
-                      `/api/transfer/search-recipients?query=${value}`,
+                      `https://digital-wallet-u6ag.onrender.com/api/transfer/search-recipients?query=${value}`,
                       config
                     );
                     setSuggestions(res.data);

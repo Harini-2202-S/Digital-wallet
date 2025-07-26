@@ -9,10 +9,10 @@ const DepositConfirmationModal = ({ depositDetails, onClose }) => {
 
   const verifyPin = async () => {
     try {
-      const res = await axios.post("/api/deposit/initiate", depositDetails);
+      const res = await axios.post("https://digital-wallet-u6ag.onrender.com/api/deposit/initiate", depositDetails);
       setTransactionId(res.data.transaction_id);
 
-      await axios.post("/api/deposit/verify-pin", { pin });
+      await axios.post("https://digital-wallet-u6ag.onrender.com/api/deposit/verify-pin", { pin });
       setShowOtpModal(true);
     } catch (err) {
       alert(err.response.data.message);

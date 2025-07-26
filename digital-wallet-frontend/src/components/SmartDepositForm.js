@@ -82,7 +82,7 @@ const SmartDepositForm = () => {
       };
 
       const res = await axios.post(
-        "/api/deposit/initiate-deposit",
+        "https://digital-wallet-u6ag.onrender.com/api/deposit/initiate-deposit",
         cleanedFormData,
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -111,7 +111,7 @@ const SmartDepositForm = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.post(
-        "/api/deposit/verify",
+        "https://digital-wallet-u6ag.onrender.com/api/deposit/verify",
         { otp, pin, sentiment, depositId },
         {
           headers: { Authorization: `Bearer ${token}` },
