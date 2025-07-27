@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./HomePage.css";
 import welcomeImage from "../assets/phone.jpg";
 import settingIcon from "../assets/neon-ring.png";
@@ -18,6 +18,33 @@ const HomePage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    // Wait for window to finish loading
+    const handleLoad = () => {
+      const elements = document.querySelectorAll(".autoShow");
+      elements.forEach((el) => observer.observe(el));
+    };
+
+    // Attach load event
+    window.addEventListener("load", handleLoad);
+
+    return () => {
+      window.removeEventListener("load", handleLoad);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div>
