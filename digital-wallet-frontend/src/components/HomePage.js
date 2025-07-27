@@ -19,7 +19,44 @@ const HomePage = () => {
     setIsModalOpen(false);
   };
 
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           entry.target.classList.add("show");
+  //         } else {
+  //           entry.target.classList.remove("show");
+  //         }
+  //       });
+  //     },
+  //     { threshold: 0.4 }
+  //   );
+
+  //   const elements = document.querySelectorAll(".autoShow, .autoRotate");
+  //   elements.forEach((el) => observer.observe(el));
+
+  //   return () => observer.disconnect();
+  // }, []);
+
   useEffect(() => {
+    const icon = document.querySelector(".autoRotate");
+    let lastScrollTop = window.scrollY;
+    let lastRotation = 0;
+
+    // Scroll-based rotation logic
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      const scrollDelta = currentScroll - lastScrollTop;
+      lastScrollTop = currentScroll;
+
+      if (icon && icon.classList.contains("show")) {
+        lastRotation += scrollDelta * 0.5; // Adjust speed as needed
+        icon.style.transform = `rotate(${lastRotation}deg)`;
+      }
+    };
+
+    // IntersectionObserver logic
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -33,10 +70,20 @@ const HomePage = () => {
       { threshold: 0.4 }
     );
 
-    const elements = document.querySelectorAll(".autoShow, .autoRotate");
+    // Observe all elements needing entry animation
+    const elements = document.querySelectorAll(
+      ".autoShow, .autoRotate, .card-article"
+    );
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    // Attach scroll listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -106,6 +153,7 @@ const HomePage = () => {
 
       <section className="what-we-do" id="what-we-do">
         <h2>What We Do</h2>
+
         <div className="card">
           <div className="card-item">
             <article className="card-article">

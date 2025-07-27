@@ -478,3 +478,26 @@ section {
   pointer-events: auto;
 }
 
+.autoCardShow {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.6s ease-in-out;
+  pointer-events: none;
+}
+
+.autoCardShow.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.card-article {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.6s ease-in-out;
+}
+
+.card-article.show {
+  opacity: 1;
+  transform: translateY(0);
+}
