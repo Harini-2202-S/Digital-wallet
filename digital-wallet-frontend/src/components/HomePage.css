@@ -122,7 +122,7 @@ section {
 
 .hero .setting-icon .autoRotate {
   animation: autoRotateAnimation;
-  animation-timeline: view();
+  /* animation-timeline: view(); */
 }
 
 @keyframes autoRotateAnimation {
@@ -149,7 +149,7 @@ section {
 
 .hero .pic4 .autoShow {
   animation: autoShowAnimation;
-  animation-timeline: view(40% auto);
+  /* animation-timeline: view(40% auto); */
 }
 
 /* Pic2 animations */
@@ -167,7 +167,7 @@ section {
 
 .hero .pic2 .autoShow {
   animation: autoShowAnimation;
-  animation-timeline: view(40% auto);
+  /* animation-timeline: view(40% auto); */
 }
 
 /* Pic1 animations */
@@ -185,7 +185,7 @@ section {
 
 .hero .pic1 .autoShow {
   animation: autoShowAnimation;
-  animation-timeline: view(40% auto);
+  /* animation-timeline: view(40% auto); */
 }
 
 /* Learn more button */
@@ -206,7 +206,7 @@ section {
 
 .hero .autoShow {
   animation: autoShowAnimation;
-  animation-timeline: view(40% auto);
+  /* animation-timeline: view(40% auto); */
 }
 
 @keyframes autoShowAnimation {
@@ -245,7 +245,7 @@ section {
   padding-left: 10px;
   border-left: 3px solid lightblue;
   animation: autoShowAnimation;
-  animation-timeline: view(100% auto);
+  /* animation-timeline: view(100% auto); */
 }
 
 .hero h2 {
@@ -272,7 +272,7 @@ section {
   padding-right: 10px;
   border-right: 3px solid lightblue;
   animation: autoShowAnimation;
-  animation-timeline: view(100% auto);
+  /* animation-timeline: view(100% auto); */
 }
 
 .hero h3 {
@@ -299,7 +299,7 @@ section {
   padding-left: 10px;
   border-left: 3px solid lightblue;
   animation: autoShowAnimation;
-  animation-timeline: view(100% auto);
+  /* animation-timeline: view(100% auto); */
 }
 
 @keyframes slideInLeft {
@@ -465,101 +465,16 @@ section {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .typeWriter,
-  .hero h1,
-  .hero h2,
-  .hero h3,
-  .hero .para1,
-  .hero .para2,
-  .hero .para3,
-  .pic1,
-  .pic2,
-  .pic4,
-  .setting-icon,
-  .learnMore {
-    position: static !important;
-    transform: none !important;
-    width: 90% !important;
-    margin: 1rem auto !important;
-    text-align: center !important;
-  }
-
-  .hero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 2rem 1rem;
-  }
-
-  .welcome-image img {
-    height: auto;
-    max-height: 70vh;
-    object-fit: cover;
-  }
-
-  .typeWriter {
-    font-size: 2rem !important;
-    padding: 10px !important;
-  }
-
-  .hero h1,
-  .hero h2,
-  .hero h3 {
-    font-size: 1.5rem !important;
-  }
-
-  .hero .para1,
-  .hero .para2,
-  .hero .para3 {
-    font-size: 0.95rem !important;
-  }
-
-  .setting-icon img,
-  .pic1 img,
-  .pic2 img,
-  .pic4 img {
-    width: 85% !important;
-    height: auto !important;
-  }
-
-  .learnMore .cta {
-    position: static !important;
-    margin: 1.5rem auto !important;
-    display: block !important;
-    padding: 12px 20px;
-    font-size: 16px;
-    transform: none !important;
-  }
-
-  .card-item {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    gap: 2rem;
-  }
-
-  .card-article {
-    width: 90% !important;
-  }
-
-  .cardData {
-    width: 100% !important;
-  }
-
-  .typeWriter {
-    order: -1 !important;
-    z-index: 10;
-  }
-}
-
 .autoShow {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(100px);
   transition: all 0.6s ease-in-out;
+  pointer-events: none;
 }
 
 .autoShow.show {
   opacity: 1;
   transform: translateY(0);
+  pointer-events: auto;
 }
+

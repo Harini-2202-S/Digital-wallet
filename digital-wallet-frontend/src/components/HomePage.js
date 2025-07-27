@@ -21,33 +21,22 @@ const HomePage = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries, obs) => {
+      (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("Element in view:", entry.target);
             entry.target.classList.add("show");
-            obs.unobserve(entry.target); // only animate once
+          } else {
+            entry.target.classList.remove("show");
           }
         });
       },
-      {
-        threshold: 0.1, // more sensitive
-      }
+      { threshold: 0.4 }
     );
 
-    // SAFETY: Wait for full DOM load and then query
-    const waitForDOM = setInterval(() => {
-      const targets = document.querySelectorAll(".autoShow");
-      if (targets.length > 0) {
-        clearInterval(waitForDOM);
-        targets.forEach((el) => observer.observe(el));
-      }
-    }, 100); // keep checking until mounted
+    const elements = document.querySelectorAll(".autoShow, .autoRotate");
+    elements.forEach((el) => observer.observe(el));
 
-    return () => {
-      clearInterval(waitForDOM);
-      observer.disconnect();
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
