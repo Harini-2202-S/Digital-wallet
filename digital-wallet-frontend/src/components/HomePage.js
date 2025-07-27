@@ -10,18 +10,7 @@ import trackSpending from "../assets/track-spending-2.jpg";
 import securePayment from "../assets/secure-payment.jpg";
 
 const HomePage = () => {
-  // State to control modal visibility
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const [activeCardIndex, setActiveCardIndex] = useState(null);
-
-  const toggleCard = (index) => {
-    const isMobile = window.innerWidth <= 768;
-    if (isMobile) {
-      setActiveCardIndex(activeCardIndex === index ? null : index);
-    }
-  };
-
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -31,11 +20,11 @@ const HomePage = () => {
   };
 
   return (
-    <div className="home-container">
+    <div>
       <div className="welcome-image">
         <img src={welcomeImage} alt="Welcome" />
       </div>
-      <div className="typeWriter">
+      <div class="typeWriter">
         <p className="simple">Simple.</p>
         <br></br>
         <p className="secure">Secure.</p>
@@ -51,11 +40,11 @@ const HomePage = () => {
 
       <section className="hero">
         <div className="setting-icon">
-          <img src={settingIcon} alt="setting-icon" className="autoRotate" />
+          <img src={settingIcon} alt="setting-icon" class="autoRotate" />
         </div>
         <h1 className="autoShow">Welcome to Your Digital Wallet</h1>
         <div className="pic4">
-          <img src={pic4} alt="pic" className="autoShow" />
+          <img src={pic4} alt="pic" class="autoShow" />
         </div>
         <p className="para1">
           A Safe and Easy Way to Manage Your Virtual Finances Welcome to the
@@ -73,7 +62,7 @@ const HomePage = () => {
         </p>
         <h2 className="autoShow">Why Choose Our Digital Wallet? </h2>.
         <div className="pic2">
-          <img src={pic2} alt="pic" className="autoShow" />
+          <img src={pic2} alt="pic" class="autoShow" />
         </div>
         <p className="para2">
           Our platform is designed for simplicity and security. Whether you're a
@@ -83,7 +72,7 @@ const HomePage = () => {
         </p>
         <h3 className="autoShow">What’s Inside Your Digital Wallet?</h3>
         <div className="pic1">
-          <img src={pic1} alt="pic" className="autoShow" />
+          <img src={pic1} alt="pic" class="autoShow" />
         </div>
         <p className="para3">
           User-Friendly Dashboard: A clear and organized space to manage your
@@ -99,31 +88,21 @@ const HomePage = () => {
         <h2>What We Do</h2>
         <div className="card">
           <div className="card-item">
-            <article
-              className={`card-article ${
-                activeCardIndex === 0 ? "active" : ""
-              }`}
-              onClick={() => toggleCard(0)}
-            >
+            <article className="card-article">
               <img src={sendMoney} alt="pic" className="card-img" />
               <div className="cardData">
                 <h2 className="cardTitle">Send money</h2>
                 <span className="cardDescription">
                   Effortlessly transfer virtual money to friends or family in
-                  just a few clicks.
+                  just a few clicks.{" "}
                 </span>
-                <a href="#" className="cardButton">
+                <a href="#" class="cardButton">
                   Read More
                 </a>
               </div>
             </article>
 
-            <article
-              className={`card-article ${
-                activeCardIndex === 1 ? "active" : ""
-              }`}
-              onClick={() => toggleCard(1)}
-            >
+            <article className="card-article">
               <img src={trackSpending} alt="pic" className="card-img" />
               <div className="cardData">
                 <h2 className="cardTitle">Track spending</h2>
@@ -131,18 +110,13 @@ const HomePage = () => {
                   Keep tabs on every transaction with detailed spending history
                   and insights.
                 </span>
-                <a href="#" className="cardButton">
+                <a href="#" class="cardButton">
                   Read More
                 </a>
               </div>
             </article>
 
-            <article
-              className={`card-article ${
-                activeCardIndex === 2 ? "active" : ""
-              }`}
-              onClick={() => toggleCard(2)}
-            >
+            <article className="card-article">
               <img src={securePayment} alt="pic" className="card-img" />
               <div className="cardData">
                 <h2 className="cardTitle">Secure payment</h2>
@@ -150,7 +124,7 @@ const HomePage = () => {
                   Experience peace of mind with encrypted data and multi-layer
                   authentication for every transaction.
                 </span>
-                <a href="#" className="cardButton">
+                <a href="#" class="cardButton">
                   Read More
                 </a>
               </div>
