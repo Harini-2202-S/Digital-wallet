@@ -510,3 +510,15 @@ section {
   animation: removeData 0.6s ease forwards;
 }
 
+.card-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* When hovered or when triggered via JS */
+.card-article:hover .card-content,
+.card-article.animate .card-content {
+  opacity: 1;
+  transform: translateY(0);
+}

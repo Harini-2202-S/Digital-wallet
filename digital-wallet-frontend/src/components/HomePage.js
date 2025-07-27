@@ -44,7 +44,6 @@ const HomePage = () => {
     let lastScrollTop = window.scrollY;
     let lastRotation = 0;
 
-    // Scroll-based rotation logic
     const handleScroll = () => {
       const currentScroll = window.scrollY;
       const scrollDelta = currentScroll - lastScrollTop;
@@ -60,25 +59,21 @@ const HomePage = () => {
       (entries) => {
         entries.forEach((entry) => {
           const target = entry.target;
+
           if (entry.isIntersecting) {
             target.classList.add("show");
 
-            // Animate card-content on render (like hover)
+            // If it's a card-article, trigger the content animation
             if (target.classList.contains("card-article")) {
-              const content = target.querySelector(".card-content");
-              if (content) {
-                content.classList.add("hover-trigger"); // play show animation
-                setTimeout(() => {
-                  content.classList.remove("hover-trigger"); // remove show
-                  content.classList.add("hide"); // play hide
-                  setTimeout(() => {
-                    content.classList.remove("hide"); // cleanup
-                  }, 1000); // match your CSS remove animation duration
-                }, 1000); // match your CSS show animation duration
-              }
+              target.classList.add("animate"); // <-- This triggers .card-content via CSS
             }
           } else {
             target.classList.remove("show");
+
+            // Optional: remove animation if you want it to reset on scroll out
+            if (target.classList.contains("card-article")) {
+              target.classList.remove("animate");
+            }
           }
         });
       },
