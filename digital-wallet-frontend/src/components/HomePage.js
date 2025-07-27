@@ -51,53 +51,50 @@ const HomePage = () => {
       lastScrollTop = currentScroll;
 
       if (icon && icon.classList.contains("show")) {
-        lastRotation += scrollDelta * 0.5; // Adjust speed as needed
+        lastRotation += scrollDelta * 0.5;
         icon.style.transform = `rotate(${lastRotation}deg)`;
       }
     };
 
-    // IntersectionObserver logic
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          const target = entry.target;
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            target.classList.add("show");
 
-            // If it's a card-article, trigger content animation
-            if (entry.target.classList.contains("card-article")) {
-              const content = entry.target.querySelector(".card-content");
+            // Animate card-content on render (like hover)
+            if (target.classList.contains("card-article")) {
+              const content = target.querySelector(".card-content");
               if (content) {
-                content.classList.add("hover-trigger");
+                content.classList.add("hover-trigger"); // play show animation
                 setTimeout(() => {
-                  content.classList.remove("hover-trigger");
-                  entry.target.classList.add("hide");
-                }, 1000); // Adjust duration to match animation
+                  content.classList.remove("hover-trigger"); // remove show
+                  content.classList.add("hide"); // play hide
+                  setTimeout(() => {
+                    content.classList.remove("hide"); // cleanup
+                  }, 1000); // match your CSS remove animation duration
+                }, 1000); // match your CSS show animation duration
               }
             }
           } else {
-            entry.target.classList.remove("show");
+            target.classList.remove("show");
           }
         });
       },
       { threshold: 0.4 }
     );
 
-    // Observe all elements needing entry animation
     const elements = document.querySelectorAll(
       ".autoShow, .autoRotate, .card-article"
     );
     elements.forEach((el) => observer.observe(el));
 
-    // Attach scroll listener
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
-      document
-        .querySelectorAll(".card-article")
-        .forEach((card) => card.classList.remove("hide"));
     };
   }, []);
 
