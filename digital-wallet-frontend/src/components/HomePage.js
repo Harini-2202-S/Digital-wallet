@@ -62,6 +62,18 @@ const HomePage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
+
+            // If it's a card-article, trigger content animation
+            if (entry.target.classList.contains("card-article")) {
+              const content = entry.target.querySelector(".card-content");
+              if (content) {
+                content.classList.add("hover-trigger");
+                setTimeout(() => {
+                  content.classList.remove("hover-trigger");
+                  entry.target.classList.add("hide");
+                }, 1000); // Adjust duration to match animation
+              }
+            }
           } else {
             entry.target.classList.remove("show");
           }
@@ -83,6 +95,9 @@ const HomePage = () => {
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
+      document
+        .querySelectorAll(".card-article")
+        .forEach((card) => card.classList.remove("hide"));
     };
   }, []);
 
