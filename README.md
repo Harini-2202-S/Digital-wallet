@@ -39,32 +39,32 @@ Try the application live:
 How to Run Locally
 
 1. Clone the repository
-   bash
-   git clone https://github.com/Harini-2202-S/Digital-wallet.git
+   bash,
+   git clone https://github.com/Harini-2202-S/Digital-wallet.git, 
    cd digital-wallet
 
-2. Install dependencies
+2. Install dependencies:
    npm install
 
-3. Configure environment variables
+3. Configure environment variables. 
    Create a .env file and add:
 
-   MONGO_URI=your_mongodb_connection_string
+   MONGO_URI=your_mongodb_connection_string,
    JWT_SECRET=your_jwt_secret_key
 
-4. Start the server
+4. Start the server: 
    node server.js
 
 This application will run at https://localhost:5000.
 
 Implemented features
 
-⦁ User registration and login
-⦁ Secure password storage with bcrypt
-⦁ JWT-based authentication
-⦁ Deposit and withdrawal operations
-⦁ Real-time balance tracking
-⦁ Transaction history logs
-⦁ Input validation and alert feedback
-⦁ RESTful API architecture
-⦁ Hosted and deployed on Render
+- User registration and login
+- Secure password storage with bcrypt
+- JWT-based authentication
+- Deposit and withdrawal operations
+- Real-time balance tracking
+- Transaction history logs
+- Input validation and alert feedback
+- RESTful API architecture
+- Hosted and deployed on Render
